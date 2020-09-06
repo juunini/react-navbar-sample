@@ -1,0 +1,42 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+li
+  list-style: none
+
+body
+  font-size: 16px
+  line-height: 1.4
+
+#root
+  display: flex
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  color: #131313
+  background-color: #ffffff
+  transition: 600ms ease
+
+.dark #root
+  color: #b6b6b6
+  background-color: #141418
+
+main
+  flex-grow: 1
+  overflow: 
+  
+@media only screen and (min-width: 600px)
+  #root
+    flex-direction: row
+
+  main
+    padding: 6rem 4rem
+
+@media only screen and (max-width: 600px)
+  #root
+    flex-direction: column-reverse
+
+  main
+    padding: 3rem 2rem

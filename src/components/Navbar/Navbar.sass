@@ -1,0 +1,102 @@
+$transition-speed: 600ms
+$lightmode-background: #e4e4e4
+$lightmode-color: #576e75
+$lightmode-hover-color: #35535c
+$lightmode-hover-background: #c4c4c4
+
+$darkmode-background: #282c34
+$darkmode-color: #b6b6b6
+$darkmode-hover-color: #ececec
+$darkmode-hover-background: #141418
+
+.navbar
+  background-color: $lightmode-background
+  transition: $transition-speed ease
+
+  ul
+    display: flex
+    height: 100vh
+
+  li
+    display: flex
+    align-items: center
+    height: 5rem
+    min-height: 5rem
+    text-decoration: none
+    color: $lightmode-color
+    filter: grayscale(100%) opacity(0.7)
+    transition: $transition-speed ease
+    cursor: pointer
+
+    &:hover
+      filter: grayscale(0%) opacity(1)
+      color: $lightmode-hover-color
+      background-color: $lightmode-hover-background
+
+    a
+      display: flex
+      align-items: center
+      color: inherit
+      text-decoration: none
+
+    span:last-of-type
+      transition: margin $transition-speed ease
+
+.dark .navbar
+  background-color: $darkmode-background
+
+  li
+    color: $darkmode-color
+
+    &:hover
+      color: $darkmode-hover-color
+      background-color: $darkmode-hover-background
+
+@media only screen and (min-width: 600px)
+  .navbar
+    width: 5rem
+    min-width: 5rem
+    height: 100vh
+
+    &:hover
+      width: 16rem
+      min-width: 16rem
+
+      span:last-of-type
+        margin-left: 0
+
+    ul
+      flex-direction: column
+
+    li
+      &:last-of-type
+        margin-top: auto
+
+      span:last-of-type
+        margin-left: -10rem
+
+      svg, img
+        width: 2rem
+        min-width: 2rem
+        margin: 0 1.5rem
+
+@media only screen and (max-width: 600px)
+  .navbar
+    left: 0
+    bottom: 0
+    width: 100vw
+    height: 5rem
+    min-height: 5rem
+
+    ul
+      flex-direction: row
+
+    li, a
+      flex-grow: 1
+      flex-direction: column
+      justify-contents: center
+
+      svg, img
+        height: 2rem
+        min-height: 2rem
+        margin: 0.6rem 1.5rem 0.4rem
