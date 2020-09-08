@@ -14,7 +14,8 @@ function Navbar(props: NavbarProps) {
         {props.itemList.map((item) => (
           <Item
             key={item.text}
-            icon={item.icon}
+            imageHref={item.imageHref}
+            imageAlt={item.imageAlt}
             text={item.text}
             href={item.href}
           />
